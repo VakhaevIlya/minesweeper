@@ -13,10 +13,10 @@ public class Main {
         System.out.println(field.consistent() ? "Success" : "Lose");
     }
 
-    private static void printField(Field field, boolean[][] flags, int delay, boolean hide) throws InterruptedException {
+    public static void printField(Field field, boolean[][] flags, int delay, boolean hide) throws InterruptedException {
         final StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < field.width; i++) {
-            for (int j = 0; j < field.height; j++) {
+        for (int j = 0; j < field.height; j++) {
+            for (int i = 0; i < field.width; i++) {
                 builder.append(' ');
                 int numMines = field.aroundMines(i, j);
                 if (field.isOpen(i, j)) {
